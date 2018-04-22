@@ -43,6 +43,33 @@ var Player = function() {
 }
 
 
+var score = 0;
+// checks if the player collides an enemy and resets player position 
+Player.prototype.update = function() {
+     this.checkCollision();
+}
+
+Player.prototype.checkCollision = function() {
+    for(var i in allEnemies) {
+        if(this.x < allEnemies[i].x + 80 &&
+         this.x + 65 > allEnemies[i].x + 2 &&
+         this.y + 135 > allEnemies[i].y + 140 &&
+         this.y + 65 < allEnemies[i].y + 75) {
+            this.score = 0;
+            this.x = 202;
+            this.y = 404;
+            console.log('Start aagin!');
+        }
+    }
+   
+     if(this.y <= 0) {
+        this.score += 1;
+        this.x = 202;
+        this.y = 404;
+        console.log('You Win!');
+    }
+
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
