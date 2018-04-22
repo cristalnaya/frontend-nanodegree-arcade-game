@@ -58,7 +58,7 @@ Player.prototype.checkCollision = function() {
             this.score = 0;
             this.x = 202;
             this.y = 404;
-            console.log('Start aagin!');
+            console.log('Start again!');
         }
     }
    
@@ -68,6 +68,14 @@ Player.prototype.checkCollision = function() {
         this.y = 404;
         console.log('You Win!');
     }
+
+    // Display Score
+    ctx.clearRect(10, 10, 350, 50);
+    ctx.fillStyle = '#0059b3';
+    ctx.font = '28px Helvetica';
+    ctx.fillText("Score: " + this.score, 202, 40);
+}
+
 
 
 // Now instantiate your objects.
