@@ -83,6 +83,18 @@ Player.prototype.render = function() {
    
 }
 
+//Create function that allows to player to move on the screen
+Player.prototype.handleInput = function(key) {
+    if (key == 'left' && this.x - 101 >= 0)
+        this.x -= 101;
+    if (key == 'right' && this.x + 101 < 505)
+        this.x += 101;
+     if (key == 'up' && this.y - 83 >= -11)
+        this.y -= 83;
+    if (key == 'down' && this.y + 83 < 487)
+        this.y += 83;
+    }
+   
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
