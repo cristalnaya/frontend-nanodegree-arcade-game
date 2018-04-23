@@ -43,7 +43,6 @@ var Player = function() {
 }
 
 
-var score = 0;
 // checks if the player collides an enemy and resets player position 
 Player.prototype.update = function() {
      this.checkCollision();
@@ -70,6 +69,7 @@ Player.prototype.checkCollision = function() {
     }
 
     // Display Score
+    // ctx.fillRect(0, 0, 300, 150);
     ctx.clearRect(10, 10, 350, 50);
     ctx.fillStyle = '#0059b3';
     ctx.font = '28px Helvetica';
@@ -111,7 +111,7 @@ var player = new Player();
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
+document.addEventListener('keydown', function(e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
